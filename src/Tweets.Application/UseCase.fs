@@ -1,8 +1,13 @@
 namespace Tweets.Application
 open Tweets.Application.Model
+open Tweets.Domain.Types
 
 module UseCase =
-    let searchTweets (searchPhrase: string) : AsyncResult<SearchedTweets, ApplicationError> =
+    let searchTweets (findTweets: FindTweets) (searchPhrase: string): AsyncResult<SearchedTweets, ApplicationError> =
         async {
-            return Error(NoTweets(searchPhrase))
+            match! findTweets(searchPhrase) with
+            | Some(tweets) ->
+                return Error(NoTweets(searchPhrase))
+            | None ->
+                return Error(NoTweets(searchPhrase))
         }

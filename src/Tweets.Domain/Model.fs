@@ -19,3 +19,5 @@ type Tweet = { IdStr: string
                Coordinates: Coordinates option
                User: TwitterUser
                Sentiment: Emotion option }
+
+type Tweets = Tweet seq
