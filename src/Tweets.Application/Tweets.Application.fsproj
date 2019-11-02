@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Library.fs" />
+    <Compile Include="Model.fs" />
+    <Compile Include="UseCase.fs" />
+    <Content Include="paket.references" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tweets.Domain\Tweets.Domain.fsproj" />
   </ItemGroup>
 
 </Project>
