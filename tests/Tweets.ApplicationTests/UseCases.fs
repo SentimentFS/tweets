@@ -21,7 +21,7 @@ module UseCase =
                     Expect.equal subject (Error(NoTweets("Test"))) ""
                 }
                 testCaseAsync "Search when tweets exists" <| async {
-                    let findTweets _ = async { return Some([ { IdStr = "Test"
+                    let findTweets _ = async { return Some([ { Id = "Test"
                                                                Text = ""
                                                                CreationDate = DateTime.UtcNow
                                                                Language = "PL"

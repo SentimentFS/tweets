@@ -7,7 +7,7 @@ module UseCase =
         async {
             match! findTweets(searchPhrase) with
             | Some(tweets) ->
-                return Error(NoTweets(searchPhrase))
+                return Ok(tweets |> Seq.map(SearchedTweet.MapFromTweet))
             | None ->
                 return Error(NoTweets(searchPhrase))
         }
